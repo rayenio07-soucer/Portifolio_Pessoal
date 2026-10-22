@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0f172a">
-    <meta name="description" content="Portfólio de Ray Enio, formado em Desenvolvimento Front-end e estudante de Técnico em Informática pelo Senac. Conheça minhas habilidades, formação e projetos.">
-<title>Ray Enio | Portfólio</title>
-<link rel="stylesheet" href="./style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <meta name="description" content="Portfólio de Ray Enio, formado em Desenvolvimento Front-end e cursando Técnico em Informática pelo Senac. Conheça minhas habilidades e projetos.">
+    <title>Ray Enio | Portfólio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     <header class="header">
@@ -42,7 +42,7 @@
                 <span class="typing-cursor" aria-hidden="true">|</span>
             </h2>
             <p class="hero-description">
-                Sou formado em Desenvolvimento Front-end e atualmente curso Técnico em Informática pelo Senac. Tenho interesse em desenvolvimento web, programação, montagem e manutenção de computadores.
+                Sou formado em Desenvolvimento Front-end pelo Senac, por meio do programa Transforme-se, e atualmente curso Técnico em Informática pelo Senac. Tenho interesse em programação, desenvolvimento web, montagem e manutenção de computadores.
             </p>
             <div class="hero-buttons">
                 <a href="#projetos" class="btn btn-primary">
@@ -74,7 +74,7 @@
         </div>
         <div class="about-content reveal">
             <p>
-                Meu nome é Ray Enio. Sou formado em Desenvolvimento Front-end e tenho interesse em programação, desenvolvimento web e criação de interfaces modernas e funcionais.
+                Meu nome é Ray Enio. Sou formado em Desenvolvimento Front-end pelo Senac, por meio do programa Transforme-se. Tenho interesse em programação, desenvolvimento web e criação de interfaces modernas e funcionais.
             </p>
             <p>
                 Atualmente, curso Técnico em Informática pelo Senac, ampliando meus conhecimentos em hardware, montagem e manutenção de computadores. Busco oportunidades para adquirir experiência prática, continuar evoluindo profissionalmente e contribuir com projetos e equipes.
@@ -92,7 +92,7 @@
                     <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
                 </div>
                 <h3>Desenvolvimento Front-end</h3>
-                <p>Senac — concluído</p>
+                <p>Senac — Programa Transforme-se</p>
                 <span class="card-tag">Concluído</span>
             </article>
             <article class="skill-card reveal">
@@ -100,7 +100,7 @@
                     <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
                 </div>
                 <h3>Técnico em Informática</h3>
-                <p>Senac — cursando</p>
+                <p>Senac</p>
                 <span class="card-tag">Em andamento</span>
             </article>
             <article class="skill-card reveal">
@@ -108,7 +108,7 @@
                     <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
                 </div>
                 <h3>Ensino Médio</h3>
-                <p>EREM Padre Machado — concluído</p>
+                <p>EREM Padre Machado</p>
                 <span class="card-tag">Concluído</span>
             </article>
             <article class="skill-card reveal">
@@ -116,7 +116,7 @@
                     <i class="fa-solid fa-wallet" aria-hidden="true"></i>
                 </div>
                 <h3>Educação Financeira</h3>
-                <p>Senac — concluído</p>
+                <p>Senac</p>
                 <span class="card-tag">Concluído</span>
             </article>
         </div>
@@ -153,7 +153,7 @@
                     <i class="fa-solid fa-computer" aria-hidden="true"></i>
                 </div>
                 <h3>Hardware e manutenção</h3>
-                <p>Montagem, manutenção e formatação de computadores.</p>
+                <p>Montagem, manutenção, limpeza e formatação de computadores.</p>
             </article>
             <article class="skill-card reveal">
                 <div class="card-icon">
@@ -206,7 +206,7 @@
         </div>
         <div class="contact-content reveal">
             <p>
-                Estou em busca de oportunidades para aplicar meus conhecimentos, adquirir experiência prática e continuar evoluindo profissionalmente na área de tecnologia.
+                Busco oportunidades para aplicar meus conhecimentos, adquirir experiência prática e continuar me desenvolvendo profissionalmente. Tenho interesse em desenvolvimento web, programação e outras oportunidades que me permitam aprender e crescer.
             </p>
             <div class="contact-list">
                 <a href="mailto:rayenio.santos@gmail.com" class="contact-item">
@@ -239,39 +239,5 @@
     <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
 </a>
 <script src="./script.js" defer></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const menuToggle = document.querySelector(".menu-toggle");
-        const navLinks = document.querySelector(".nav-links");
-        if (menuToggle && navLinks) {
-            menuToggle.addEventListener("click", function () {
-                const isOpen = navLinks.classList.toggle("active");
-                menuToggle.setAttribute("aria-expanded", String(isOpen));
-                menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
-                const icon = menuToggle.querySelector("i");
-                if (icon) {
-                    icon.classList.toggle("fa-bars", !isOpen);
-                    icon.classList.toggle("fa-xmark", isOpen);
-                }
-            });
-            navLinks.querySelectorAll("a").forEach(function (link) {
-                link.addEventListener("click", function () {
-                    navLinks.classList.remove("active");
-                    menuToggle.setAttribute("aria-expanded", "false");
-                    menuToggle.setAttribute("aria-label", "Abrir menu");
-                    const icon = menuToggle.querySelector("i");
-                    if (icon) {
-                        icon.classList.remove("fa-xmark");
-                        icon.classList.add("fa-bars");
-                    }
-                });
-            });
-        }
-        const year = document.getElementById("year");
-        if (year) {
-            year.textContent = new Date().getFullYear();
-        }
-    });
-</script>
 </body>
 </html>
