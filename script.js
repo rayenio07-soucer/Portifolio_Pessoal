@@ -7,12 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.documentElement.classList.add("js-enabled");
 
+    // Ano automático
     const yearElement = document.querySelector("#year");
 
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
 
+    // Efeito de digitação
     const typingElement = document.querySelector("#typing-text");
 
     if (typingElement) {
@@ -32,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
             let timeoutId;
 
             function typeEffect() {
+                if (document.hidden) return;
+
                 const phrase = phrases[phraseIndex];
 
                 charIndex += deleting ? -1 : 1;
@@ -68,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Animações ao rolar a página
     const revealElements = document.querySelectorAll(
         ".reveal, .project-card, .skill-card"
     );
@@ -101,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Efeitos nos cards de projetos
     const projectCards = document.querySelectorAll(".project-card");
 
     projectCards.forEach((card) => {
@@ -123,6 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Botão voltar ao topo
     const backToTop = document.querySelector(".back-to-top");
 
     if (backToTop) {
@@ -149,19 +156,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Rolagem suave dos links internos
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
         link.addEventListener("click", (event) => {
             const targetId = link.getAttribute("href");
 
-            if (!targetId || targetId === "#") {
-                return;
-            }
+            if (!targetId || targetId === "#") return;
 
             const target = document.querySelector(targetId);
 
-            if (!target) {
-                return;
-            }
+            if (!target) return;
 
             event.preventDefault();
 
@@ -174,8 +178,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Menu responsivo para celular
     const menuButton = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-menu");
+    const navMenu = document.querySelector("#nav-links");
 
     if (menuButton && navMenu) {
         menuButton.setAttribute("aria-expanded", "false");
@@ -185,7 +190,9 @@ document.addEventListener("DOMContentLoaded", () => {
             menuButton.setAttribute("aria-expanded", "false");
         }
 
-        menuButton.addEventListener("click", () => {
+        menuButton.addEventListener("click", (event) => {
+            event.stopPropagation();
+
             const isOpen = navMenu.classList.toggle("active");
 
             menuButton.setAttribute(
@@ -201,7 +208,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener("keydown", (event) => {
             if (event.key === "Escape") {
                 closeMenu();
-                menuButton.focus();
             }
         });
 
@@ -213,8 +219,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 closeMenu();
             }
         });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+        });
     }
 
+    // Destaque da seção atual no menu
     const sections = document.querySelectorAll("main section[id]");
     const navLinks = document.querySelectorAll(
         '.nav-links a[href^="#"]'
@@ -224,14 +237,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const sectionObserver = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    if (!entry.isIntersecting) {
-                        return;
-                    }
+                    if (!entry.isIntersecting) return;
 
                     const sectionId = entry.target.id;
 
                     navLinks.forEach((link) => {
-                        if (link.getAttribute("href") === `#${sectionId}`) {
+                        if (
+                            link.getAttribute("href") === `#${sectionId}`
+                        ) {
                             link.setAttribute("aria-current", "location");
                         } else {
                             link.removeAttribute("aria-current");
